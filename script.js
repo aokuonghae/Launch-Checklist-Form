@@ -33,10 +33,10 @@ window.addEventListener("load", function() {
          if (mainPilot === "" || coPilot === "" || fuel === "" || massCargo === "") {
             alert("All fields are required!");
             event.preventDefault();
-         } else if (/^[a-zA-Z/s]+$/.test(mainPilot) === false || /^[a-zA-Z ]+$/.test(coPilot) === false) {
+         } else if (/^[a-zA-Z ]+$/.test(mainPilot) === false || /^[a-zA-Z ]+$/.test(coPilot) === false) {
             alert("Please enter a valid name");
             event.preventDefault();
-         } else if (/^[0-9/.]+$/.test(fuel) === false || /^[0-9]+$/.test(massCargo) === false) {
+         } else if (/^[0-9/.]+$/.test(fuel) === false || /^[0-9/.]+$/.test(massCargo) === false) {
             alert("Please enter a valid number");
             event.preventDefault();
          } else {
@@ -45,10 +45,14 @@ window.addEventListener("load", function() {
             if (fuel < 10000) {
                fuelGo = false;
                document.getElementById("fuelStatus").innerHTML = `Fuel level not enough for launch.`;
+            } else {
+               document.getElementById("fuelStatus").value;              
             }
             if (massCargo > 10000) {
                cargoGo = false;
                document.getElementById("cargoStatus").innerHTML = `Too much mass for launch.`;
+            }else{
+               document.getElementById("cargoStatus").innerHTML=`Cargo mass low enough for launch`;               
             }
             if (fuelGo === false || cargoGo === false) {
                flight.style.visibility = "visible";
