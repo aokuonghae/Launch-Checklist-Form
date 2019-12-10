@@ -20,7 +20,7 @@ window.addEventListener("load", function() {
       });
    });
 
-      window.addEventListener("submit", function(evt) {
+      form.addEventListener("submit", function(evt) {
          evt.preventDefault()
          let mainPilot = document.querySelector("input[name=pilotName]").value;
          let coPilot = document.querySelector("input[name=copilotName]").value;
